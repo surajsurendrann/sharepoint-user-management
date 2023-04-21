@@ -81,7 +81,7 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <Tabs />
+      <Tabs userId={userId} />
       <Container>
         {isEditing ? (
           <>
@@ -128,7 +128,6 @@ const Profile = () => {
                       Place :
                       <input
                         type="text"
-                        defaultValue={user.Place}
                         onChange={(e) => {
                           setPlace(e.target.value);
                         }}
@@ -165,6 +164,7 @@ const Profile = () => {
                   <p key={user.Id}>Name : {user.Title}</p>
                   <p>Email : {user.Email}</p>
                   <p>Designation : {user.Designation}</p>
+                  {user.Place && <p>Place : {user.Place}</p>}
                 </DetailsContainer>
                 <div>
                   <button

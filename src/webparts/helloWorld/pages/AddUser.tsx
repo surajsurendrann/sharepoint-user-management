@@ -4,13 +4,11 @@ import * as React from "react";
 import styled from "styled-components";
 import AddDetailsSection from "../components/AddDetailsSection";
 import Navbar from "../components/Navbar";
-import Tabs from "../components/Tabs";
 
 const AddUser = () => {
   return (
     <>
       <Navbar />
-      <Tabs />
       <Wrapper>
         <AddDetailsSection />
       </Wrapper>

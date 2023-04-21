@@ -2,9 +2,13 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import * as React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Tabs = () => {
+interface TabProps {
+  userId: string;
+}
+
+const Tabs: React.FC<TabProps> = ({ userId }) => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -13,8 +17,12 @@ const Tabs = () => {
   return (
     <Container>
       <BackButton onClick={handleBack}>go back</BackButton>
-      <PageTitle>Profile</PageTitle>
-      <Document>Documents</Document>
+      <Link to={`/profile/${userId}`}>
+        <PageTitle>Profile</PageTitle>
+      </Link>
+      <Link to={`/profile/documents/${userId}`}>
+        <Document>Documents</Document>
+      </Link>
     </Container>
   );
 };

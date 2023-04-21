@@ -150,7 +150,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       Title: newUser.Title,
       Email: newUser.Email,
       Designation: newUser.Designation,
-      // Place: newUser.Place,
+      Place: newUser.Place,
     });
 
     const documentLibraryName = `test/${userId}`;
